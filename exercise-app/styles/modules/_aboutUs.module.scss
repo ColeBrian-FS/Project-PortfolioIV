@@ -1,0 +1,17 @@
+.about-us-container {
+  background-color: $lightGray;
+  padding: 3rem;
+  .about-us-title {
+    margin-bottom: 2rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+  .about-us-text {
+    color: $gray;
+    line-height: 2.15em;
+
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
+  }
+}

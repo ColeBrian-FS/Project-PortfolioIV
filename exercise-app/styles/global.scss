@@ -1,0 +1,30 @@
+@import "./modules/imports";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: $fontFamily;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $darkPurple;
+}
+
+input {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 0.2px solid $lightGray;
+}
+
+li {
+  list-style: none;
+}

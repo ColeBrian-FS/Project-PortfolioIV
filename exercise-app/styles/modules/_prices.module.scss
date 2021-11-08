@@ -1,0 +1,45 @@
+.prices-title {
+  padding: 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.prices-container {
+  .card-list {
+    list-style: none;
+    padding: 0;
+    li {
+      color: $gray;
+      text-align: center;
+      margin: 0.75rem;
+    }
+  }
+  .card-title {
+    padding: 0.75rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  .card-text {
+    color: $gray;
+  }
+  .card {
+    padding: 1.5rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+  .price-card-footer {
+    background-color: none;
+  }
+  .price {
+    color: $darkRed;
+    font-size: 32px;
+    font-weight: bolder;
+  }
+  @media (min-width: 768px) {
+    display: flex;
+    margin: 1rem;
+  }
+}
