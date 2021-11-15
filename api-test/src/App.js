@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 const App = () => {
   const [query, setQuery] = useState('kettlebell');
   const [data, setdata] = useState([]);
+
   useEffect(() => {
     fetch(`https://exercisedb.p.rapidapi.com/exercises/equipment/${query}`, {
       "method": "GET",

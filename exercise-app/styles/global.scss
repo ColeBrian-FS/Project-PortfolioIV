@@ -7,7 +7,6 @@
   padding: 0;
   margin: 0;
   font-family: $fontFamily;
-  font-weight: 400;
 }
 
 h1,
@@ -24,7 +23,23 @@ input {
   border-radius: 5px;
   border: 0.2px solid $lightGray;
 }
-
+.btn-primary {
+  border: $darkPurple !important;
+  background-color: $darkPurple !important;
+  &:hover {
+    background-color: rgb(105, 44, 105) !important;
+  }
+}
+.btn-secondary {
+  border: $lightRed !important;
+  background-color: $lightRed !important;
+}
 li {
   list-style: none;
+}
+
+footer {
+  padding: 20px;
+  border-top: 1px solid $lightGray;
+  color: $black;
 }

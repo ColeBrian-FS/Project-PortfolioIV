@@ -16,7 +16,7 @@ const Hero = () => {
                         <p className="hero-text">Crush Your Goals </p>
                     </Container>
                     <Container className="btn-container">
-                        <Link href="/dashboard"><Button className="hero-btn">Get Started</Button></Link>
+                        <Link href="/dashboard"><a className="btn btn-primary btn-lg">Get Started</a></Link>
                     </Container>
                 </div>
             </div>

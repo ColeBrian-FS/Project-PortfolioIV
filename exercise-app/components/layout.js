@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
                     {children}
                 </main>
             </div>
-            <footer>Footer</footer>
+            <footer>© 2017–2021 Company, Inc</footer>
         </React.Fragment>
     );
 }

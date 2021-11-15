@@ -1,7 +1,6 @@
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../public/luis-reyes-mTorQ9gFfOg-unsplash.jpg);
-  background-size: cover;
   height: 25vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -9,6 +8,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 1rem;
   .hero-title {
     padding: 1.75rem;
@@ -16,11 +16,19 @@
   .btn-container {
     display: flex;
     justify-content: center;
+    .btn {
+      text-transform: uppercase;
+      background: $darkPurple;
+      border: $darkPurple;
+      &:hover {
+        background-color: #431b6d;
+      }
+    }
   }
   .hero-text {
     color: #ffffff;
     text-align: center;
-    font-weight: bold;
+    margin-bottom: 1.125rem;
     text-transform: uppercase;
   }
 

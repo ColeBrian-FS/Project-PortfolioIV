@@ -1,0 +1,16 @@
+.equipment-container {
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.equipment {
+  padding: 10rem;
+  text-transform: capitalize;
+  text-align: center;
+  background-color: $lightGray;
+  h1 {
+    padding: 2.125rem;
+  }
+}

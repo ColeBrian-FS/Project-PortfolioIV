@@ -1,10 +1,53 @@
 .contact-container {
+  background-color: $lightGray;
   display: flex;
-  justify-content: center;
-}
-
-.form-group {
-  display: flex;
+  padding: 2rem;
   flex-direction: column;
-  justify-content: stretch;
+  justify-content: center;
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      .btn {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  label {
+    display: none;
+  }
+  .form-group {
+    padding: 20px;
+  }
+
+  input {
+    margin-bottom: 1.5rem;
+    padding: 10px 16px;
+    border-radius: 10px;
+    color: $black;
+    width: 100%;
+    &::placeholder {
+      color: $black;
+    }
+  }
+  h1 {
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+  textarea {
+    width: 100%;
+    border: none;
+    padding: 2rem;
+    margin-bottom: 1.125rem;
+  }
+  @media (min-width: 1024px) {
+    .form-group {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Badge from 'react-bootstrap/Badge'
 const Prices = () => {
     return (<>
         <h1 className="prices-title">Prices</h1>
@@ -23,7 +24,8 @@ const Prices = () => {
             </div>
 
             <div className="card">
-                <h2 className="card-title">Pro</h2>
+                <div className="d-flex align-items-center" ><h2 className="card-title">Pro </h2><Badge className="bg-secondary bg-lg">Best Value</Badge></div>
+
                 <div className="card-body">
                     <p className="card-text">Starter Workout Plan</p>
                     <ul className="card-list">
@@ -35,7 +37,7 @@ const Prices = () => {
                 <h3 className="price">$39</h3>
                 <div className="price-card-footer">
 
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button className="btn btn-primary btn-lg">Buy Now</button>
                 </div>
             </div>
 
@@ -54,9 +56,7 @@ const Prices = () => {
                     <button className="btn btn-primary">Buy Now</button>
                 </div>
             </div>
-
         </div>
-
     </>);
 }
 

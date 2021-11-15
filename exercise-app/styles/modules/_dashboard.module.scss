@@ -1,13 +1,13 @@
 .dashboard-title {
   text-align: center;
   padding: 1.75rem;
-  color: $lightGray;
-  text-transform: uppercase;
+  color: $black;
+  text-transform: capitalize;
 }
 .dashboard-content {
   max-height: 1000px;
-  background-color: $gray;
   overflow: scroll;
+  background-color: rgb(228, 228, 228);
 }
 .dashboard-body {
   display: grid;
@@ -22,6 +22,9 @@
 .side-nav-form {
   visibility: hidden;
   padding: 1.75rem;
+  .form-title {
+    margin: 1.5rem;
+  }
   .form-group {
     display: flex;
     flex-direction: row;
@@ -31,13 +34,34 @@
   border-top: 1px solid $gray;
   padding: 1.75rem;
 }
+
 .dashboard-card {
-  padding: 2rem;
+  padding: 0.5rem;
   background-color: $lightGray;
-  margin: 1.5rem;
-  box-shadow: 5px 5px 5px rgb(44, 42, 42);
-  p {
-    text-transform: uppercase;
+  box-shadow: 0px 13px 19px 5px rgba(0, 0, 0, 0.17);
+  border: 1px solid $darkPurple;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 400ms ease-in-out;
+  &:hover {
+    box-shadow: 0px 13px 19px 5px rgba(0, 0, 0, 0.32);
+  }
+  .dashboard-card-body {
+    h5,
+    h6 {
+      padding: 0.75rem;
+      color: $black;
+      text-transform: capitalize;
+    }
+    h6 {
+      font-size: 20px;
+      color: $gray;
+    }
+    .btn-primary {
+      color: $gray;
+    }
   }
 }
 
@@ -78,10 +102,6 @@
           display: flex;
           flex-direction: column;
           cursor: pointer;
-          button {
-            padding: 12px;
-            text-transform: uppercase;
-          }
         }
       }
     }

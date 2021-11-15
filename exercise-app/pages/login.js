@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link"
 const Login = () => {
     return (
         <>
@@ -13,7 +14,7 @@ const Login = () => {
                     </div>
                     <div>
                         <button>Login</button>
-                        <button ><a href="/signup">Sign Up</a></button>
+                        <Link href="/signup"><a>Sign Up</a></Link>
                     </div>
                 </form>
 
