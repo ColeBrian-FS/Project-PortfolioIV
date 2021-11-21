@@ -6,6 +6,12 @@ import Features from '../components/features';
 import Prices from '../components/prices';
 import Downloads from '../components/downloads';
 import Contacts from "../components/contacts"
+
+// Create a new Workout plan
+// Add workouts to list 
+// remove workouts from list 
+// use local storage to store workout list 
+
 const Home = () => {
   return (
     <>

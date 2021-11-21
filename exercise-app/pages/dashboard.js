@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Link from "next/link"
+import Profile from "../components/profile"
 import ReactPaginate from "react-paginate";
+import { async } from 'regenerator-runtime';
 const Dashboard = () => {
     const initalState = ''
+    const [user, setuser] = useState();
     const [input, setInput] = useState(initalState);
-    const [query, setQuery] = useState('kettlebell')
+    const [query, setQuery] = useState('https://exercisedb.p.rapidapi.com/exercises')
     const [data, setdata] = useState([]);
     // state of pagination
     const [pages, setPages] = useState(0);
@@ -14,7 +17,7 @@ const Dashboard = () => {
     //current pages visit
     const pagesVisit = pages * perPage
 
-    //displaying pages dynamically
+    //Displaying pages dynamically
     const displayPages = data.slice(pagesVisit, pagesVisit + perPage).map(data => {
         return (<div className="dashboard-card m-3" key={data.id}>
             <div className="dashboard-card-body">
@@ -38,7 +41,7 @@ const Dashboard = () => {
 
 
     useEffect(() => {
-        fetch(`https://exercisedb.p.rapidapi.com/exercises/equipment/${query}`, {
+        fetch(`${query}`, {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "exercisedb.p.rapidapi.com",
@@ -58,18 +61,24 @@ const Dashboard = () => {
 
     }, [query]);
 
+    //Display account. 
+
+
+    useEffect(() => {
+        const account = JSON.parse(localStorage.getItem('account'))
+        setuser(account)
+    }, [!user]);
 
 
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault()
-
-        setQuery(input)
-
+        setQuery(`https://exercisedb.p.rapidapi.com/exercises/equipment/${input}`)
         setInput(initalState)
     }
 
 
+    //  Display different Sortation based on Click Event 
 
     return (
         <section className="dashboard">
@@ -77,9 +86,40 @@ const Dashboard = () => {
                 <div className="side-nav-content">
                     <div className="side-nav-form">
                         <form onSubmit={handleSubmit}>
-                            <div className="form-title"><h2>Search Equipment</h2></div>
+                            <div className="form-title"><h2>Search by equipment</h2></div>
                             <div className="form-group">
-                                <input name="search" value={input} onChange={e => setInput(e.target.value)} placeholder="Search"></input>
+                                <select name="search" value={input} onChange={e => setInput(e.target.value)} required>
+                                    <option value=""></option>
+                                    <option value="assisted">assisted</option>
+                                    <option value="band">band</option>
+                                    <option value="barbell">barbell</option>
+                                    <option value="body weight">body weight</option>
+                                    <option value="bosu ball">bosu ball</option>
+                                    <option value="cable">cable </option>
+                                    <option value="dumbbell">dumbbell</option>
+                                    <option value="elliptical machine">elliptical machine</option>
+                                    <option value="ez barbell">ez barbell</option>
+                                    <option value="hammer">hammer</option>
+                                    <option value="kettlebell">kettlebell</option>
+                                    <option value="leverage machine">leverage machine</option>
+                                    <option value="medicine ball"> medicine ball</option>
+                                    <option value="olympic barbell">olympic barbell</option>
+                                    <option value="resistance band">resistance band </option>
+                                    <option value="roller">roller</option>
+                                    <option value="rope">rope</option>
+                                    <option value="skierg machine">skierg machine</option>
+                                    <option value="sled machine">sled machine</option>
+                                    <option value="smith machine">smith machine</option>
+                                    <option value="stability ball">stability ball</option>
+                                    <option value="stationary bike">stationary bike</option>
+                                    <option value="stepmill machine">stepmill machine</option>
+                                    <option value="tire">tire</option>
+                                    <option value="trap bar">trap bar</option>
+                                    <option value="upper body ergometer">upper body ergometer</option>
+                                    <option value="weighted">weighted</option>
+                                    <option value="wheel roller">wheel roller</option>
+                                </select>
+                                {/* <input name="search" value={input} onChange={e => setInput(e.target.value)} placeholder="Search"></input> */}
                                 <button className="btn btn-primary" type='submit' >Submit</button>
                             </div>
                         </form>
@@ -91,10 +131,10 @@ const Dashboard = () => {
                         <nav className="navbar-side">
                             <h3>Group by:</h3>
                             <ul className="nav-items">
-                                <li><Link href="/equipment" as={'/equipment'} className="btn btn-primary"><a>Equipment</a></Link></li>
-                                <li><Link href="/musclegroup" as={'/musclegroup'} className="btn btn-primary"  >Muscle Group</Link></li>
-                                <li><Link href="/name" as={'/name'} className="btn btn-primary">Exercise Name</Link></li>
-                                <li><Link href="/workout" as={'/workout'} className="btn btn-primary">All Workouts</Link></li>
+                                <li><button className="btn btn-primary" onClick={() => setQuery('https://exercisedb.p.rapidapi.com/exercises/equipment/trap bar')} >Equipment</button></li>
+                                <li><button className="btn btn-primary" onClick={() => setQuery('https://exercisedb.p.rapidapi.com/exercises/target/biceps')} >Muscle Group</button></li>
+                                <li><button className="btn btn-primary" onClick={() => setQuery('https://exercisedb.p.rapidapi.com/exercises/name/barbell')}>Exercise Name</button></li>
+                                <li><button className="btn btn-primary" onClick={() => setQuery('https://exercisedb.p.rapidapi.com/exercises')} >All Workouts</button></li>
                             </ul>
                         </nav>
                     </div>
@@ -104,16 +144,14 @@ const Dashboard = () => {
 
                 <div className="side-nav-content">
                     <div className="search-info">
-                        <ul>
-
-                        </ul>
+                        {user === undefined ? <p>No Current Users </p> : <Profile profile={user} />}
                     </div>
                 </div>
             </div>
             <div className="dashboard-content">
 
                 <h1 className="dashboard-title">Dashboard</h1>
-
+                <p>{`Number of Results: ${data.length} `}</p>
 
                 <main className="dashboard-body">
 

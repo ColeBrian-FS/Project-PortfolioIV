@@ -1,0 +1,53 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  max-height: 1000px;
+  background-color: $lightGray;
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    input {
+      width: 100%;
+      border: none;
+      padding: 20px;
+    }
+  }
+  h1 {
+    text-transform: uppercase;
+    padding: 0.8rem;
+    text-align: center;
+    font-weight: 400;
+  }
+  .form-group {
+    margin-bottom: 60px;
+    label {
+      display: block;
+      margin-bottom: 1.3rem;
+    }
+    .error {
+      display: inline-block;
+      margin-top: 15px;
+      color: $lightRed;
+    }
+  }
+
+  button {
+    margin: 1rem;
+    padding: 20px 12px 20px 12px;
+  }
+  @media (min-width: 768px) {
+    margin: 15px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    form {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

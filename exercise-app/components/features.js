@@ -1,5 +1,4 @@
 import React from 'react';
-import Container from "react-bootstrap/Container"
 import { FaSearch, FaFilter, FaPlus } from 'react-icons/fa'
 
 const Features = () => {
@@ -12,14 +11,13 @@ const Features = () => {
             </div>
             <div className="feature">
                 <FaFilter className="icon" />
-                <p>Sort by Muscle Group</p>
+                <p>Sort by Equipment</p>
             </div>
             <div className="feature">
                 <FaPlus className="icon" />
                 <p>Add to Workout List</p>
             </div>
         </div>
-
     </>);
 }
 

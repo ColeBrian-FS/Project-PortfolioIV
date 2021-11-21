@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link'
 
 
 
 const Equipment = ({ exercise }) => {
-    console.log(exercise)
+
+
     const { name, gifUrl, bodyPart, equipment, target } = exercise;
 
-
+    const handleSubmit = () => {
+        alert('handle Submit')
+    }
     return (<>
         <div className="equipment-container">
             <div className='equipment'>
@@ -17,7 +20,7 @@ const Equipment = ({ exercise }) => {
                 <h2>Equipment: {equipment}</h2>
                 <h3>Muscle Target: {target}</h3>
                 <p>Video: <a href={gifUrl} target="_blank" rel="noreferrer">link</a></p>
-
+                <button className="btn btn-primary" onClick={handleSubmit}>Add to</button>
                 <Link href="/dashboard">Go Back</Link>
 
             </div>
@@ -29,7 +32,7 @@ const Equipment = ({ exercise }) => {
 }
 export default Equipment;
 
-
+// creating props to be displayed by static props 
 export const getStaticProps = async (context) => {
 
     const res = await fetch(`https://exercisedb.p.rapidapi.com/exercises/exercise/${context.params.id}`, {
@@ -39,18 +42,20 @@ export const getStaticProps = async (context) => {
         }
     })
 
+
     const exercise = await res.json()
 
     // return object
     return {
         props: {
-            exercise
+            exercise,
         }
     }
 
 
 }
 
+//Dynamically creating paths for workouts 
 export const getStaticPaths = async () => {
     // getting all exercises 
 

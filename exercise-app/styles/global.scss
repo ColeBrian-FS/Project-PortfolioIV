@@ -17,12 +17,14 @@ h5,
 h6 {
   color: $darkPurple;
 }
-
-input {
-  padding: 6px 10px;
-  border-radius: 5px;
-  border: 0.2px solid $lightGray;
+option {
+  select {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 0.2px solid $lightGray;
+  }
 }
+
 .btn-primary {
   border: $darkPurple !important;
   background-color: $darkPurple !important;
@@ -32,7 +34,10 @@ input {
 }
 .btn-secondary {
   border: $lightRed !important;
-  background-color: $lightRed !important;
+  background-color: $darkRed !important;
+  &:hover {
+    background-color: $lightRed !important;
+  }
 }
 li {
   list-style: none;
