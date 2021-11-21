@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Input from '../components/input';
 import { useRouter } from 'next/router';
-import data from "../data"
+
 
 const Workouts = () => {
     const router = useRouter()
