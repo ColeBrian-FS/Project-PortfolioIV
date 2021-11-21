@@ -1,6 +1,10 @@
 import Image from "next/image"
 import Iphone from "../public/iPhone-XS-MAX.png"
 import Macbook from "../public/Macbook Screen.png"
+
+
+
+
 const Downloads = () => {
     return (<>
         {/* Downloads */}
