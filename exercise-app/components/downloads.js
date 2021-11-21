@@ -1,9 +1,6 @@
-import Image from "next/image"
-import Iphone from "../public/iPhone-XS-MAX.png"
-import Macbook from "../public/Macbook Screen.png"
-
-
-
+// import Image from "next/image"
+// import Iphone from "../public/iPhone-XS-MAX.png"
+// import Macbook from "../public/Macbook Screen.png"
 
 const Downloads = () => {
     return (<>
@@ -11,7 +8,7 @@ const Downloads = () => {
         <div className="downloads-container">
             <div className="downloads-items">
                 <div className="mockup-img" >
-                    <Image src={Iphone} width={300} height={600} />
+                    {/* <Image src={Iphone} width={300} height={600} /> */}
                 </div>
 
                 <div className="download-links">
@@ -32,7 +29,7 @@ const Downloads = () => {
                     </div>
                 </div>
                 <div className="mockup-img" >
-                    <Image src={Macbook} width={600} height={400} />
+                    {/* <Image src={Macbook} width={600} height={400} /> */}
                 </div>
 
             </div>
