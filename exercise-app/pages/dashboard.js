@@ -165,10 +165,10 @@ const Dashboard = () => {
                     nextLabel={<span>&raquo;</span>}
                     breakLabel={'...'}
                     breakClassName={'page-link'}
-                    pageLinkClassName="page-link"
+                    pageLinkClassName={"page-link"}
                     pageCount={pageCount}
                     onPageChange={changePage}
-                    containerClassName='pagination justify-content-center pagination-lg'
+                    containerClassName='pagination justify-content-center pagination-md'
                     previousLinkClassName={'page-link'}
                     nextLinkClassName={'page-link'}
                     disableClassName={'page-item disable'}

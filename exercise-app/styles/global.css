@@ -343,9 +343,16 @@
 .dashboard-body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-body {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
 }
 
 .side-nav,
@@ -354,7 +361,7 @@
 }
 
 .side-nav-form {
-  visibility: hidden;
+  border-bottom: 0.1px solid #707070;
   padding: 1.75rem;
 }
 
@@ -392,7 +399,6 @@
   background-color: #f2f2f2;
   -webkit-box-shadow: 0px 13px 19px 5px rgba(0, 0, 0, 0.17);
           box-shadow: 0px 13px 19px 5px rgba(0, 0, 0, 0.17);
-  border: 1px solid #250d3f;
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -401,9 +407,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   -webkit-transition: 400ms ease-in-out;
   transition: 400ms ease-in-out;
 }
@@ -497,10 +503,6 @@
             flex-direction: column;
     cursor: pointer;
   }
-  .side-nav-form {
-    visibility: visible;
-    border-bottom: 0.1px solid #707070;
-  }
 }
 
 .equipment-container {
@@ -525,51 +527,6 @@
 
 .equipment h1 {
   padding: 2.125rem;
-}
-
-.downloads-container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 1rem;
-  margin-bottom: 1.125rem;
-}
-
-.downloads-container .downloads-items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.downloads-container .downloads-items .download-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.downloads-container .downloads-items .download-links h2 {
-  text-align: center;
-}
-
-.downloads-container .downloads-items .download-links button {
-  margin: 0.25rem;
-}
-
-@media (min-width: 1024px) {
-  .downloads-container .downloads-items .download-links button {
-    padding: 10px 6px;
-  }
 }
 
 .form-container {

@@ -22,8 +22,6 @@ const topNav = ({ profile, logout }) => {
                         </>
                     }
                 </Nav>
-
-
             </Navbar.Collapse>
         </Navbar>
     </>
