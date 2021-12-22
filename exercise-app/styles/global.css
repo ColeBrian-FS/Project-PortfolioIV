@@ -506,7 +506,7 @@
 }
 
 .equipment-container {
-  height: 1000px;
+  height: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -519,7 +519,7 @@
 }
 
 .equipment {
-  padding: 10rem;
+  padding: 1.125rem;
   text-transform: capitalize;
   text-align: center;
   background-color: #f2f2f2;
@@ -527,6 +527,26 @@
 
 .equipment h1 {
   padding: 2.125rem;
+}
+
+.equipment .btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.equipment .btn-container button {
+  margin-bottom: 1.125rem;
 }
 
 .form-container {

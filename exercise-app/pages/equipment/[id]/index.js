@@ -20,9 +20,10 @@ const Equipment = ({ exercise }) => {
                 <h2>Equipment: {equipment}</h2>
                 <h3>Muscle Target: {target}</h3>
                 <p>Video: <a href={gifUrl} target="_blank" rel="noreferrer">link</a></p>
-                <button className="btn btn-primary" onClick={handleSubmit}>Add to</button>
-                <Link href="/dashboard">Go Back</Link>
 
+                <div className='btn-container'>
+                    <Link href="/dashboard">Go Back</Link>
+                </div>
             </div>
 
         </div>
