@@ -2,25 +2,24 @@ import React from 'react';
 import Link from 'next/link'
 
 
-
 const Equipment = ({ exercise }) => {
 
 
     const { name, gifUrl, bodyPart, equipment, target } = exercise;
 
-    const handleSubmit = () => {
-        alert('handle Submit')
-    }
+
     return (<>
         <div className="equipment-container">
             <div className='equipment'>
-
                 <h1 className="equipment">{`${name}'s Details`}</h1>
-                <h2>BodyPart: {bodyPart}</h2>
-                <h2>Equipment: {equipment}</h2>
-                <h3>Muscle Target: {target}</h3>
-                <p>Video: <a href={gifUrl} target="_blank" rel="noreferrer">link</a></p>
+                <h2>BodyPart</h2>
+                <p>{bodyPart}</p>
+                <h2>Equipment</h2>
+                <p>{equipment}</p>
+                <h3>Muscle Target</h3>
+                <p>{target}</p>
 
+                <img src={gifUrl} alt={name}></img>
                 <div className='btn-container'>
                     <Link href="/dashboard">Go Back</Link>
                 </div>

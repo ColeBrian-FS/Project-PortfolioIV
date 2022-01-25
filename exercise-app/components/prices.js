@@ -2,7 +2,7 @@ import React from 'react';
 import Badge from 'react-bootstrap/Badge'
 const Prices = () => {
     return (<>
-        <h1 className="prices-title">Prices</h1>
+        <h1 className="prices-title">Pricing</h1>
 
         <div className="prices-container">
 

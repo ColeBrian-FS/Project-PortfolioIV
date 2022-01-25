@@ -1,20 +1,15 @@
 .equipment-container {
-  height: 700px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0.75rem;
 }
 
 .equipment {
-  padding: 1.125rem;
+  padding: 0.5;
   text-transform: capitalize;
   text-align: center;
-  background-color: $lightGray;
   h1 {
-    padding: 2.125rem;
+    padding: 0.5rem;
   }
   .btn-container {
-    display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;

@@ -27,13 +27,6 @@ const SideNav = () => {
                         </nav>
                     </div>
                 </div>
-                <div className="side-nav-content">
-                    <div className="search-info">
-                        <ul>
-
-                        </ul>
-                    </div>
-                </div>
             </div>
         </>
 

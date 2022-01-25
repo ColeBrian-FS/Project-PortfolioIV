@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from "next/link"
 import Profile from "../components/profile"
 import ReactPaginate from "react-paginate";
-import { async } from 'regenerator-runtime';
 const Dashboard = () => {
     const initalState = ''
     const [user, setuser] = useState();
@@ -19,15 +18,17 @@ const Dashboard = () => {
 
     //Displaying pages dynamically
     const displayPages = data.slice(pagesVisit, pagesVisit + perPage).map(data => {
-        return (<div className="dashboard-card m-3" key={data.id}>
-            <div className="dashboard-card-body">
-                <h5 >{data.name}</h5>
-                <h6>{data.target}</h6>
+        return (
+            <div className="dashboard-card mb-2" key={data.id}>
+                <div className="dashboard-card-body">
+                    <h5>{data.name}</h5>
+                    <h6>{data.target}</h6>
+                </div>
+                <div className="dashboard-card-footer">
+                    <Link href="/equipment/[id]" as={`/equipment/${data.id}`}><a className="btn btn-primary btn-lg mb-2">Get More Info...</a></Link>
+                </div>
             </div>
-            <div className="dashboard-card-footer">
-                <Link href="/equipment/[id]" as={`/equipment/${data.id}`}><a className="btn btn-primary btn-lg mb-2">Get More Info...</a></Link>
-            </div>
-        </div>)
+        )
 
 
     })
@@ -60,14 +61,6 @@ const Dashboard = () => {
             });
 
     }, [query]);
-
-    //Display account. 
-
-
-    useEffect(() => {
-        const account = JSON.parse(localStorage.getItem('account'))
-        setuser(account)
-    }, [!user]);
 
 
 
@@ -137,14 +130,6 @@ const Dashboard = () => {
                                 <li><button className="btn btn-primary" onClick={() => setQuery('https://exercisedb.p.rapidapi.com/exercises')} >All Workouts</button></li>
                             </ul>
                         </nav>
-                    </div>
-
-                </div>
-
-
-                <div className="side-nav-content">
-                    <div className="search-info">
-                        {user === undefined ? <p>No Current Users </p> : <Profile profile={user} />}
                     </div>
                 </div>
             </div>

@@ -17,8 +17,8 @@ const topNav = ({ profile, logout }) => {
                         <button className="btn btn-primary" onClick={logout}>Logout</button> </>
                         :
                         <>
-                            <Nav.Link href="/signup" > <button className="btn btn-primary">Sign Up</button></Nav.Link>
-                            <Nav.Link href="/login"  ><button className="btn btn-secondary">Login</button></Nav.Link>
+                            <Nav.Link href="" > <button className="btn btn-primary">Sign Up</button></Nav.Link>
+                            <Nav.Link href=""  ><button className="btn btn-secondary">Login</button></Nav.Link>
                         </>
                     }
                 </Nav>
